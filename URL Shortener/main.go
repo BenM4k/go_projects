@@ -19,7 +19,7 @@ func shorten(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "http://localhost:8080/%s\n", shortURL)
 }
 
-func redirect(w http.ResponseWriter, r *http.Request){
+func redirect(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	originalUrl, ok := urlStore[vars["shortURL"]]
 	if ok {
